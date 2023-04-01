@@ -1,0 +1,20 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class J0001TwoSum {
+    public int[] twoSum(int[] nums, int target) {
+
+        /* by Amr Rimawi
+         * Contact me on LinkedIn: https://www.linkedin.com/in/amr-rimawi/
+         */
+
+        Map<Integer, Integer> numToIndex = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (numToIndex.containsKey(target - nums[i])) {
+                return new int[] {numToIndex.get(target - nums[i]), i};
+            }
+            numToIndex.put(nums[i], i);
+        }
+        return new int[] {};
+    }
+}
